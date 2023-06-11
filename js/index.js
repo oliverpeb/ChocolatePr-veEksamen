@@ -7,24 +7,17 @@ Vue.createApp({
             stocklevel: 0,
             filteredEggs: [],
             errorMessage: ""
-        
         }
-
-
     },
 
     async created() {
         this.getAll();
-
     },
 
     methods: {
         async getAll() {
             this.helperGetAndShow(baseUrl)
         },
-
-
-
 
         async helperGetAndShow(url) {
             try {
@@ -63,8 +56,32 @@ Vue.createApp({
             }catch(ex){
                 console.error(ex);
             }
-        }
+        },
+
+        // Method to add a new egg to the API
+        /*
+        async addEgg(newEgg)
+        {
+            try{
+                const url = `${baseUrl}`;
+                const response = await axios.post(url, newEgg);
+            }catch(ex){
+                console.error(ex);
+            }
+        },
+        */
+
+        // Method to delete an egg from the API
+        /*
+        async deleteEgg(productNo)
+        {
+            try{
+                const url = `${baseUrl}/${productNo}`;
+                const response = await axios.delete(url);
+            }catch(ex){
+                console.error(ex);
+            }
+        },
+        */
     }
-
-
 }).mount("#app")
